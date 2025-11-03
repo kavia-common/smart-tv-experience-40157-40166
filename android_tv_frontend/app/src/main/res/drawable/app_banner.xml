@@ -4,21 +4,19 @@
     android:height="180dp"
     android:viewportWidth="320"
     android:viewportHeight="180">
-    
-    <!-- Banner background -->
+
+    <!-- Ocean Professional background -->
     <path
-        android:fillColor="#1976D2"
+        android:fillColor="#2563EB"
         android:pathData="M0,0h320v180h-320z"/>
-    
-    <!-- App name text background -->
+
+    <!-- Accent band -->
     <path
-        android:fillColor="#0D47A1"
-        android:pathData="M20,60h280v60h-280z"/>
-    
+        android:fillColor="#F59E0B"
+        android:pathData="M0,150h320v30h-320z"/>
+
     <!-- Decorative play icon -->
     <path
         android:fillColor="#FFFFFF"
         android:pathData="M 50,75 L 50,105 L 80,90 Z"/>
-    
-    <!-- Banner for android_tv_frontend -->
 </vector>

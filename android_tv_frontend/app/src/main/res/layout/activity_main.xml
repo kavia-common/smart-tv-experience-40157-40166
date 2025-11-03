@@ -4,32 +4,118 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#000000">
+    android:background="@color/ocean_background"
+    android:paddingLeft="48dp"
+    android:paddingRight="48dp"
+    android:paddingTop="48dp"
+    android:paddingBottom="48dp">
 
-    <TextView
-        android:id="@+id/title_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="android_tv_frontend"
-        android:textSize="48sp"
-        android:textColor="#FFFFFF"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
+    <!-- Left navigation rail -->
+    <LinearLayout
+        android:id="@+id/left_nav"
+        android:layout_width="220dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_surface_round"
+        android:padding="16dp"
+        android:focusable="false"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="parent">
 
-    <TextView
-        android:id="@+id/subtitle_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ready for rating screen integration"
-        android:textSize="24sp"
-        android:textColor="#CCCCCC"
-        android:layout_marginTop="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/title_text" />
+        <TextView
+            android:id="@+id/nav_home"
+            style="@style/NavItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Home"
+            android:background="@drawable/bg_card_focusable"
+            android:focusable="true"
+            android:nextFocusRight="@id/search_bar" />
 
+        <TextView
+            android:id="@+id/nav_search"
+            style="@style/NavItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Search"
+            android:background="@drawable/tv_card_focus_outline"
+            android:focusable="true"
+            android:nextFocusRight="@id/search_bar" />
+
+        <TextView
+            android:id="@+id/nav_library"
+            style="@style/NavItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Favorites"
+            android:background="@drawable/tv_card_focus_outline"
+            android:focusable="true"
+            android:nextFocusRight="@id/content_grid" />
+
+        <TextView
+            android:id="@+id/nav_settings"
+            style="@style/NavItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Settings"
+            android:background="@drawable/tv_card_focus_outline"
+            android:focusable="true"
+            android:nextFocusRight="@id/content_grid" />
+    </LinearLayout>
+
+    <!-- Top Search Bar with voice placeholder -->
+    <LinearLayout
+        android:id="@+id/search_container"
+        android:layout_width="0dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:background="@drawable/bg_surface_round"
+        android:padding="12dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/left_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="32dp"
+        android:layout_marginBottom="16dp">
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:hint="Search"
+            android:textColor="@color/ocean_text"
+            android:textColorHint="#6B7280"
+            android:paddingLeft="12dp"
+            android:background="@android:color/transparent"
+            android:focusable="true"
+            android:imeOptions="actionSearch"
+            android:singleLine="true" />
+
+        <TextView
+            android:id="@+id/voice_button"
+            android:layout_width="72dp"
+            android:layout_height="match_parent"
+            android:text="🎤"
+            android:textSize="28sp"
+            android:gravity="center"
+            android:contentDescription="Voice Search"
+            android:background="@drawable/tv_card_focus_outline"
+            android:focusable="true" />
+    </LinearLayout>
+
+    <!-- Central content grid -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/content_grid"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="24dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintTop_toBottomOf="@id/search_container"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@id/left_nav"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginLeft="32dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>

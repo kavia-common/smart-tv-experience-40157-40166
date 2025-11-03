@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">android_tv_frontend</string>
-    
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_library">Favorites</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Retro Theme note for standards -->
+    <string name="retro_note">Retro Theme: clean aesthetic, subtle shadows, rounded corners, minimalist design.</string>
+
     <!-- Rating Screen Strings -->
     <string name="rating_title">Did you like it?</string>
     <string name="rating_message">Your vote helps us recommend more content like this.</string>
